@@ -1,0 +1,171 @@
+Verified at 2026-09-30T03:31:15.469782+00:00
+
+$ systemctl is-active minecraft
+active
+
+
+$ systemctl status minecraft --no-pager
+● minecraft.service - Minecraft Forge 26.2 Hardcore Reset Server
+     Loaded: loaded (/etc/systemd/system/minecraft.service; enabled; preset: enabled)
+     Active: active (running) since Wed 2026-09-30 03:30:09 UTC; 1min 5s ago
+   Main PID: 347099 (python3)
+      Tasks: 58 (limit: 17149)
+     Memory: 1.9G (peak: 1.9G)
+        CPU: 42.722s
+     CGroup: /system.slice/minecraft.service
+             ├─347099 /usr/bin/python3 /home/ubuntu/minecraft-26-2/hardcore-reset/lifecycle.py
+             ├─347123 /bin/sh /home/ubuntu/minecraft-26-2/run.sh nogui
+             └─347147 java @user_jvm_args.txt @libraries/net/minecraftforge/forge/26.2-65.1.3/unix_args.txt nogui
+
+Sep 30 03:30:18 minecraft bash[347147]: [03:30:18] [Server thread/INFO] [minecraft/LoggingLevelLoadListener]: Time elapsed: 12 ms
+Sep 30 03:30:18 minecraft bash[347147]: [03:30:18] [Server thread/INFO] [minecraft/DedicatedServer]: Done (0.328s)! For help, type "help"
+Sep 30 03:30:18 minecraft bash[347147]: [03:30:18] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
+Sep 30 03:30:18 minecraft bash[347147]: [03:30:18] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_end
+Sep 30 03:30:18 minecraft bash[347147]: [03:30:18] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_nether
+Sep 30 03:30:18 minecraft bash[347147]: [03:30:18] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (world): All chunks are saved
+Sep 30 03:30:18 minecraft bash[347147]: [03:30:18] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+Sep 30 03:30:18 minecraft bash[347147]: [03:30:18] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+Sep 30 03:30:18 minecraft bash[347147]: [03:30:18] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage: All dimensions are saved
+Sep 30 03:30:18 minecraft bash[347147]: [03:30:18] [Server thread/INFO] [ne.mi.se.pe.PermissionAPI/]: Successfully initialized permission handler forge:default_handler
+
+
+$ journalctl -u minecraft -n 100 --no-pager
+Sep 30 03:30:10 minecraft bash[347147]: WARNING: A restricted method in java.lang.System has been called
+Sep 30 03:30:10 minecraft bash[347147]: WARNING: java.lang.System::load has been called by com.sun.jna.Native in module com.sun.jna (jar:file:///home/ubuntu/minecraft-26-2/libraries/net/java/dev/jna/jna/5.17.0/jna-5.17.0.jar!/)
+Sep 30 03:30:10 minecraft bash[347147]: WARNING: Use --enable-native-access=com.sun.jna to avoid a warning for callers in this module
+Sep 30 03:30:10 minecraft bash[347147]: WARNING: Restricted methods will be blocked in a future release unless native access is enabled
+Sep 30 03:30:10 minecraft bash[347147]: 2026-09-30T03:30:10.687064537Z main WARN Advanced terminal features are not available in this environment
+Sep 30 03:30:10 minecraft bash[347147]: [03:30:10] [main/INFO] [cp.mo.mo.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forge_server, nogui]
+Sep 30 03:30:10 minecraft bash[347147]: [03:30:10] [main/INFO] [cp.mo.mo.Launcher/MODLAUNCHER]: JVM identified as Ubuntu OpenJDK 64-Bit Server VM 25.0.4.1+1-1-24.04.4-Ubuntu
+Sep 30 03:30:10 minecraft bash[347147]: [03:30:10] [main/INFO] [cp.mo.mo.Launcher/MODLAUNCHER]: ModLauncher 10.2.6 starting: java version 25.0.4.1 by Ubuntu; OS Linux arch amd64 version 7.0.0-1011-oracle
+Sep 30 03:30:10 minecraft bash[347147]: [03:30:10] [main/INFO] [ne.mi.fm.lo.ImmediateWindowHandler/]: ImmediateWindowProvider not loading because launch target is forge_server
+Sep 30 03:30:10 minecraft bash[347147]: [03:30:10] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.7 Source=jar:file:///home/ubuntu/minecraft-26-2/libraries/org/spongepowered/mixin/0.8.7/mixin-0.8.7.jar!/ Service=ModLauncher Env=SERVER
+Sep 30 03:30:11 minecraft bash[347147]: [03:30:11] [main/INFO] [ne.mi.fm.lo.mo.JarInJarDependencyLocator/]: No dependencies to load found. Skipping!
+Sep 30 03:30:11 minecraft bash[347147]: [03:30:11] [main/INFO] [cp.mo.mo.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forge_server' with arguments [nogui]
+Sep 30 03:30:14 minecraft bash[347147]: [03:30:14] [modloading-worker-0/INFO] [lo.ha.HardcoreReset/]: [HARDCORE] hardcorereset 1.1.0 loaded; observation countdown 30 seconds
+Sep 30 03:30:14 minecraft bash[347147]: [03:30:14] [modloading-worker-0/INFO] [ne.mi.co.ForgeMod/FORGEMOD]: Forge mod loading, version 65.1.3, for MC 26.2 with MCP 20260616.103818
+Sep 30 03:30:14 minecraft bash[347147]: [03:30:14] [modloading-worker-0/INFO] [ne.mi.co.MinecraftForge/FORGE]: MinecraftForge v65.1.3 Initialized
+Sep 30 03:30:14 minecraft bash[347147]: [03:30:14] [modloading-worker-0/INFO] [ne.mi.co.ForgeMod/FORGEMOD]: Opening jdk.naming.dns/com.sun.jndi.dns to java.naming
+Sep 30 03:30:15 minecraft bash[347147]: [03:30:15] [Forge Version Check/INFO] [ne.mi.fm.VersionChecker/]: [forge] Starting version check at https://files.minecraftforge.net/net/minecraftforge/forge/promotions_slim.json
+Sep 30 03:30:15 minecraft bash[347147]: [03:30:15] [Forge Version Check/INFO] [ne.mi.fm.VersionChecker/]: [forge] Found status: AHEAD Current: 65.1.3 Target: null
+Sep 30 03:30:15 minecraft bash[347147]: [03:30:15] [main/INFO] [mojang/YggdrasilAuthenticationService]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, profilesHost=https://api.mojang.com, name=PROD]
+Sep 30 03:30:15 minecraft bash[347147]: [03:30:15] [main/WARN] [ne.mi.co.ForgeHooks/WP]: The following mods have version differences that were not resolved:
+Sep 30 03:30:15 minecraft bash[347147]: hardcorereset (version 1.0.0 -> 1.1.0)
+Sep 30 03:30:15 minecraft bash[347147]: Things may not work well.
+Sep 30 03:30:17 minecraft bash[347147]: [03:30:17] [main/INFO] [minecraft/RecipeManager]: Loaded 1585 recipes
+Sep 30 03:30:17 minecraft bash[347147]: [03:30:17] [main/INFO] [minecraft/AdvancementTree]: Loaded 1688 advancements
+Sep 30 03:30:17 minecraft bash[347147]: [03:30:17] [Server thread/INFO] [minecraft/DedicatedServer]: Starting minecraft server version 26.2
+Sep 30 03:30:17 minecraft bash[347147]: [03:30:17] [Server thread/INFO] [minecraft/DedicatedServer]: Loading properties
+Sep 30 03:30:17 minecraft bash[347147]: [03:30:17] [Server thread/INFO] [minecraft/DedicatedServer]: Default game type: SURVIVAL
+Sep 30 03:30:17 minecraft bash[347147]: [03:30:17] [Server thread/INFO] [minecraft/MinecraftServer]: Generating keypair
+Sep 30 03:30:17 minecraft bash[347147]: [03:30:17] [Server thread/INFO] [minecraft/DedicatedServer]: Starting Minecraft server on *:25566
+Sep 30 03:30:17 minecraft bash[347147]: 2026-09-30T03:30:17.811026953Z Server thread ERROR An exception occurred processing Appender DebugFile
+Sep 30 03:30:17 minecraft bash[347147]: org.apache.logging.log4j.core.appender.AppenderLoggingException: java.lang.NoClassDefFoundError: Could not initialize class io.netty.channel.kqueue.Native
+Sep 30 03:30:17 minecraft bash[347147]:         at SECURE-BOOTSTRAP/org.apache.logging.log4j.core@2.26.0/org.apache.logging.log4j.core.config.AppenderControl.tryCallAppender(AppenderControl.java:164)
+Sep 30 03:30:17 minecraft bash[347147]:         at SECURE-BOOTSTRAP/org.apache.logging.log4j.core@2.26.0/org.apache.logging.log4j.core.config.AppenderControl.callAppender0(AppenderControl.java:133)
+Sep 30 03:30:17 minecraft bash[347147]:         at SECURE-BOOTSTRAP/org.apache.logging.log4j.core@2.26.0/org.apache.logging.log4j.core.config.AppenderControl.callAppenderPreventRecursion(AppenderControl.java:124)
+Sep 30 03:30:17 minecraft bash[347147]:         at SECURE-BOOTSTRAP/org.apache.logging.log4j.core@2.26.0/org.apache.logging.log4j.core.config.AppenderControl.callAppender(AppenderControl.java:88)
+Sep 30 03:30:17 minecraft bash[347147]:         at SECURE-BOOTSTRAP/org.apache.logging.log4j.core@2.26.0/org.apache.logging.log4j.core.config.LoggerConfig.callAppenders(LoggerConfig.java:807)
+Sep 30 03:30:17 minecraft bash[347147]:         at SECURE-BOOTSTRAP/org.apache.logging.log4j.core@2.26.0/org.apache.logging.log4j.core.config.LoggerConfig.processLogEvent(LoggerConfig.java:765)
+Sep 30 03:30:17 minecraft bash[347147]:         at SECURE-BOOTSTRAP/org.apache.logging.log4j.core@2.26.0/org.apache.logging.log4j.core.config.LoggerConfig.log(LoggerConfig.java:741)
+Sep 30 03:30:17 minecraft bash[347147]:         at SECURE-BOOTSTRAP/org.apache.logging.log4j.core@2.26.0/org.apache.logging.log4j.core.config.LoggerConfig.log(LoggerConfig.java:650)
+Sep 30 03:30:17 minecraft bash[347147]:         at SECURE-BOOTSTRAP/org.apache.logging.log4j.core@2.26.0/org.apache.logging.log4j.core.config.AwaitCompletionReliabilityStrategy.log(AwaitCompletionReliabilityStrategy.java:67)
+Sep 30 03:30:17 minecraft bash[347147]:         at SECURE-BOOTSTRAP/org.apache.logging.log4j.core@2.26.0/org.apache.logging.log4j.core.Logger.logMessage(Logger.java:173)
+Sep 30 03:30:17 minecraft bash[347147]:         at SECURE-BOOTSTRAP/org.apache.logging.log4j.slf4j2.impl@2.26.0/org.apache.logging.slf4j.Log4jLogger.log(Log4jLogger.java:374)
+Sep 30 03:30:17 minecraft bash[347147]:         at SECURE-BOOTSTRAP/io.netty.common@4.2.15.Final/io.netty.util.internal.logging.LocationAwareSlf4JLogger.log(LocationAwareSlf4JLogger.java:46)
+Sep 30 03:30:17 minecraft bash[347147]:         at SECURE-BOOTSTRAP/io.netty.common@4.2.15.Final/io.netty.util.internal.logging.LocationAwareSlf4JLogger.debug(LocationAwareSlf4JLogger.java:129)
+Sep 30 03:30:17 minecraft bash[347147]:         at SECURE-BOOTSTRAP/io.netty.transport.classes.kqueue@4.2.15.Final/io.netty.channel.kqueue.KQueue.<clinit>(KQueue.java:54)
+Sep 30 03:30:17 minecraft bash[347147]:         at TRANSFORMER/minecraft@26.2/net.minecraft.server.network.EventLoopGroupHolder.remote(EventLoopGroupHolder.java:59)
+Sep 30 03:30:17 minecraft bash[347147]:         at TRANSFORMER/minecraft@26.2/net.minecraft.server.network.ServerConnectionListener.startTcpServerListener(ServerConnectionListener.java:60)
+Sep 30 03:30:17 minecraft bash[347147]:         at TRANSFORMER/minecraft@26.2/net.minecraft.server.dedicated.DedicatedServer.initServer(DedicatedServer.java:217)
+Sep 30 03:30:17 minecraft bash[347147]:         at TRANSFORMER/minecraft@26.2/net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:728)
+Sep 30 03:30:17 minecraft bash[347147]:         at TRANSFORMER/minecraft@26.2/net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:299)
+Sep 30 03:30:17 minecraft bash[347147]:         at java.base/java.lang.Thread.run(Thread.java:1474)
+Sep 30 03:30:17 minecraft bash[347147]: Caused by: java.lang.NoClassDefFoundError: Could not initialize class io.netty.channel.kqueue.Native
+Sep 30 03:30:17 minecraft bash[347147]:         at java.base/java.lang.Class.forName0(Native Method)
+Sep 30 03:30:17 minecraft bash[347147]:         at java.base/java.lang.Class.forName(Class.java:547)
+Sep 30 03:30:17 minecraft bash[347147]:         at SECURE-BOOTSTRAP/org.apache.logging.log4j@2.26.0/org.apache.logging.log4j.util.LoaderUtil.loadClass(LoaderUtil.java:212)
+Sep 30 03:30:17 minecraft bash[347147]:         at SECURE-BOOTSTRAP/org.apache.logging.log4j.core@2.26.0/org.apache.logging.log4j.core.pattern.ThrowableExtendedStackTraceRenderer.lambda$static$1(ThrowableExtendedStackTraceRenderer.java:196)
+Sep 30 03:30:17 minecraft bash[347147]:         at SECURE-BOOTSTRAP/org.apache.logging.log4j.core@2.26.0/org.apache.logging.log4j.core.pattern.ThrowableExtendedStackTraceRenderer$ExtendedContext.loadClass(ThrowableExtendedStackTraceRenderer.java:180)
+Sep 30 03:30:17 minecraft bash[347147]:         at SECURE-BOOTSTRAP/org.apache.logging.log4j.core@2.26.0/org.apache.logging.log4j.core.pattern.ThrowableExtendedStackTraceRenderer$ExtendedContext.createClassResourceInfoByName(ThrowableExtendedStackTraceRenderer.java:166)
+Sep 30 03:30:17 minecraft bash[347147]:         at SECURE-BOOTSTRAP/org.apache.logging.log4j.core@2.26.0/org.apache.logging.log4j.core.pattern.ThrowableExtendedStackTraceRenderer$ExtendedContext.ofThrowable(ThrowableExtendedStackTraceRenderer.java:96)
+Sep 30 03:30:17 minecraft bash[347147]:         at SECURE-BOOTSTRAP/org.apache.logging.log4j.core@2.26.0/org.apache.logging.log4j.core.pattern.ThrowableExtendedStackTraceRenderer$ExtendedContext.access$000(ThrowableExtendedStackTraceRenderer.java:81)
+Sep 30 03:30:17 minecraft bash[347147]:         at SECURE-BOOTSTRAP/org.apache.logging.log4j.core@2.26.0/org.apache.logging.log4j.core.pattern.ThrowableExtendedStackTraceRenderer.createContext(ThrowableExtendedStackTraceRenderer.java:43)
+Sep 30 03:30:17 minecraft bash[347147]:         at SECURE-BOOTSTRAP/org.apache.logging.log4j.core@2.26.0/org.apache.logging.log4j.core.pattern.ThrowableExtendedStackTraceRenderer.createContext(ThrowableExtendedStackTraceRenderer.java:34)
+Sep 30 03:30:17 minecraft bash[347147]:         at SECURE-BOOTSTRAP/org.apache.logging.log4j.core@2.26.0/org.apache.logging.log4j.core.pattern.ThrowableStackTraceRenderer.renderThrowable(ThrowableStackTraceRenderer.java:55)
+Sep 30 03:30:17 minecraft bash[347147]:         at SECURE-BOOTSTRAP/org.apache.logging.log4j.core@2.26.0/org.apache.logging.log4j.core.pattern.ThrowablePatternConverter.format(ThrowablePatternConverter.java:130)
+Sep 30 03:30:17 minecraft bash[347147]:         at SECURE-BOOTSTRAP/org.apache.logging.log4j.core@2.26.0/org.apache.logging.log4j.core.layout.PatternLayout$NoFormatPatternSerializer.toSerializable(PatternLayout.java:354)
+Sep 30 03:30:17 minecraft bash[347147]:         at SECURE-BOOTSTRAP/org.apache.logging.log4j.core@2.26.0/org.apache.logging.log4j.core.layout.PatternLayout.toText(PatternLayout.java:251)
+Sep 30 03:30:17 minecraft bash[347147]:         at SECURE-BOOTSTRAP/org.apache.logging.log4j.core@2.26.0/org.apache.logging.log4j.core.layout.PatternLayout.encode(PatternLayout.java:237)
+Sep 30 03:30:17 minecraft bash[347147]:         at SECURE-BOOTSTRAP/org.apache.logging.log4j.core@2.26.0/org.apache.logging.log4j.core.layout.PatternLayout.encode(PatternLayout.java:57)
+Sep 30 03:30:17 minecraft bash[347147]:         at SECURE-BOOTSTRAP/org.apache.logging.log4j.core@2.26.0/org.apache.logging.log4j.core.appender.AbstractOutputStreamAppender.directEncodeEvent(AbstractOutputStreamAppender.java:227)
+Sep 30 03:30:17 minecraft bash[347147]:         at SECURE-BOOTSTRAP/org.apache.logging.log4j.core@2.26.0/org.apache.logging.log4j.core.appender.AbstractOutputStreamAppender.tryAppend(AbstractOutputStreamAppender.java:220)
+Sep 30 03:30:17 minecraft bash[347147]:         at SECURE-BOOTSTRAP/org.apache.logging.log4j.core@2.26.0/org.apache.logging.log4j.core.appender.AbstractOutputStreamAppender.append(AbstractOutputStreamAppender.java:211)
+Sep 30 03:30:17 minecraft bash[347147]:         at SECURE-BOOTSTRAP/org.apache.logging.log4j.core@2.26.0/org.apache.logging.log4j.core.appender.RollingRandomAccessFileAppender.append(RollingRandomAccessFileAppender.java:395)
+Sep 30 03:30:17 minecraft bash[347147]:         at SECURE-BOOTSTRAP/org.apache.logging.log4j.core@2.26.0/org.apache.logging.log4j.core.config.AppenderControl.tryCallAppender(AppenderControl.java:160)
+Sep 30 03:30:17 minecraft bash[347147]:         ... 19 more
+Sep 30 03:30:17 minecraft bash[347147]: Caused by: java.lang.ExceptionInInitializerError: Exception java.lang.IllegalStateException: Only supported on OSX/BSD [in thread "Server thread"]
+Sep 30 03:30:17 minecraft bash[347147]:         at SECURE-BOOTSTRAP/io.netty.transport.classes.kqueue@4.2.15.Final/io.netty.channel.kqueue.Native.loadNativeLibrary(Native.java:159)
+Sep 30 03:30:17 minecraft bash[347147]:         at SECURE-BOOTSTRAP/io.netty.transport.classes.kqueue@4.2.15.Final/io.netty.channel.kqueue.Native.<clinit>(Native.java:76)
+Sep 30 03:30:17 minecraft bash[347147]:         at SECURE-BOOTSTRAP/io.netty.transport.classes.kqueue@4.2.15.Final/io.netty.channel.kqueue.KQueue.<clinit>(KQueue.java:38)
+Sep 30 03:30:17 minecraft bash[347147]:         ... 6 more
+Sep 30 03:30:17 minecraft bash[347147]: WARNING: A restricted method in java.lang.System has been called
+Sep 30 03:30:17 minecraft bash[347147]: WARNING: java.lang.System::loadLibrary has been called by io.netty.util.internal.NativeLibraryUtil in module io.netty.common (jar:file:///home/ubuntu/minecraft-26-2/libraries/io/netty/netty-common/4.2.15.Final/netty-common-4.2.15.Final.jar!/)
+Sep 30 03:30:17 minecraft bash[347147]: WARNING: Use --enable-native-access=io.netty.common to avoid a warning for callers in this module
+Sep 30 03:30:17 minecraft bash[347147]: WARNING: Restricted methods will be blocked in a future release unless native access is enabled
+Sep 30 03:30:17 minecraft bash[347147]: [03:30:17] [Server thread/WARN] [minecraft/DedicatedServer]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!
+Sep 30 03:30:17 minecraft bash[347147]: [03:30:17] [Server thread/WARN] [minecraft/DedicatedServer]: The server will make no attempt to authenticate usernames. Beware.
+Sep 30 03:30:17 minecraft bash[347147]: [03:30:17] [Server thread/WARN] [minecraft/DedicatedServer]: While this makes the game possible to play without internet access, it also opens up the ability for hackers to connect with any username they choose.
+Sep 30 03:30:17 minecraft bash[347147]: [03:30:17] [Server thread/WARN] [minecraft/DedicatedServer]: To change this, set "online-mode" to "true" in the server.properties file.
+Sep 30 03:30:17 minecraft bash[347147]: [03:30:17] [Server thread/INFO] [minecraft/DedicatedServer]: Preparing level "world"
+Sep 30 03:30:18 minecraft bash[347147]: [03:30:18] [Server thread/INFO] [minecraft/LoggingLevelLoadListener]: Loading 0 persistent chunks...
+Sep 30 03:30:18 minecraft bash[347147]: [03:30:18] [Server thread/INFO] [minecraft/LoggingLevelLoadListener]: Preparing spawn area: 100%
+Sep 30 03:30:18 minecraft bash[347147]: [03:30:18] [Server thread/INFO] [minecraft/LoggingLevelLoadListener]: Time elapsed: 12 ms
+Sep 30 03:30:18 minecraft bash[347147]: [03:30:18] [Server thread/INFO] [minecraft/DedicatedServer]: Done (0.328s)! For help, type "help"
+Sep 30 03:30:18 minecraft bash[347147]: [03:30:18] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
+Sep 30 03:30:18 minecraft bash[347147]: [03:30:18] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_end
+Sep 30 03:30:18 minecraft bash[347147]: [03:30:18] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_nether
+Sep 30 03:30:18 minecraft bash[347147]: [03:30:18] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (world): All chunks are saved
+Sep 30 03:30:18 minecraft bash[347147]: [03:30:18] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+Sep 30 03:30:18 minecraft bash[347147]: [03:30:18] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+Sep 30 03:30:18 minecraft bash[347147]: [03:30:18] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage: All dimensions are saved
+Sep 30 03:30:18 minecraft bash[347147]: [03:30:18] [Server thread/INFO] [ne.mi.se.pe.PermissionAPI/]: Successfully initialized permission handler forge:default_handler
+
+
+$ ss -ltnp sport = :25566
+State  Recv-Q Send-Q Local Address:Port  Peer Address:PortProcess
+LISTEN 0      4096               *:25566            *:*    users:(("java",pid=347147,fd=222))
+
+
+$ pgrep -af java
+347147 java @user_jvm_args.txt @libraries/net/minecraftforge/forge/26.2-65.1.3/unix_args.txt nogui
+347259 /bin/bash -lc python3 - <<'PY' from pathlib import Path import datetime,hashlib,json,os,re,shutil,subprocess,time r=Path.cwd(); evidence=[] for attempt in range(80):  log=(r/'logs/latest.log').read_text()  if 'hardcorereset 1.1.0 loaded' in log and 'Done (' in log: break  time.sleep(.5) else: raise RuntimeError('Server did not finish startup within 40 seconds') def command(args):  result=subprocess.run(args,text=True,capture_output=True,check=True)  evidence.append('$ '+' '.join(args)+'\n'+result.stdout)  return result.stdout assert command(['systemctl','is-active','minecraft']).strip()=='active' command(['systemctl','status','minecraft','--no-pager']) command(['journalctl','-u','minecraft','-n','100','--no-pager']) assert 'LISTEN' in command(['ss','-ltnp','sport = :25566']) command(['pgrep','-af','java']) java=[] for proc in Path('/proc').iterdir():  if not proc.name.isdigit(): continue  try:   if (proc/'comm').read_text().strip()=='java' and (proc/'cwd').resolve()==r: java.append(proc)  except (FileNotFoundError,PermissionError,ProcessLookupError): pass assert len(java)==1,java pid=java[0].name flags=command(['jcmd',pid,'VM.flags']) assert 'InitialHeapSize=6442450944' in flags and 'MaxHeapSize=12884901888' in flags wrapper=command(['systemctl','show','minecraft','--value','-p','MainPID']).strip() def parent(pid): return re.search(r'^PPid:\s+(\d+)',Path('/proc',pid,'status').read_text(),re.M).group(1) assert parent(parent(pid))==wrapper assert 'hardcore-reset/lifecycle.py' in Path('/proc',wrapper,'cmdline').read_bytes().decode() for line in (r/'hardcore-reset/pre-1.1.0.sha256').read_text().splitlines():  digest,name=line.split(None,1); name=name.strip()  if name=='server.properties': continue  assert hashlib.sha256(Path(name).read_bytes()).hexdigest()==digest,name+' changed' props='\n'.join(sorted(line for line in (r/'server.properties').read_text().splitlines() if line and not line.startswith('#'))) assert hashlib.sha256(props.encode()).hexdigest()==(r/'hardcore-reset/pre-1.1.0-properties.sha256').read_text().strip() identity=f'{(r/"world").stat().st_dev}:{(r/"world").stat().st_ino} world\n' assert identity==(r/'hardcore-reset/pre-1.1.0-world-identity.txt').read_text() assert not os.path.lexists(r/'.reset_world') installed=r/'mods/hardcorereset-1.1.0.jar' validation=json.loads((r/'hardcore-reset/validation-1.1.0.json').read_text()) assert hashlib.sha256(installed.read_bytes()).hexdigest()==validation['jar_sha256'] assert installed.read_bytes()==(r/'hardcorereset-src/build/libs/hardcorereset-1.1.0.jar').read_bytes() assert sorted(p.name for p in (r/'mods').glob('hardcorereset-*.jar'))==['hardcorereset-1.1.0.jar'] evidence.append('PASS: version 1.1.0 loaded; active service; TCP 25566; one Minecraft JVM; wrapper owns lifecycle; 6G/12G heap unchanged; lifecycle.py/run wrapper/systemd unchanged; server properties values unchanged; production world identity unchanged; marker absent; installed JAR identical to tested build.') evidence.append(json.dumps(validation,indent=2)) (r/'hardcore-reset/verification-1.1.0.txt').write_text('Verified at '+datetime.datetime.now(datetime.UTC).isoformat()+'\n\n'+'\n\n'.join(evidence)+'\n') for temporary in Path('/tmp').glob('hardcore-forge-test-*'):  if temporary.is_dir() and (temporary/'ISOLATED_TEST_ONLY').is_file():   shutil.rmtree(temporary) print(evidence[-2]) print('\n'.join(line for line in log.splitlines() if any(t in line for t in ['hardcorereset 1.1.0','Forge mod loading','Starting Minecraft server on','Done (']))) PY
+
+
+$ jcmd 347147 VM.flags
+347147:
+-XX:-AOTInvokeDynamicLinking -XX:-AOTRecordTraining -XX:-AOTReplayTraining -XX:CICompilerCount=4 -XX:ConcGCThreads=2 -XX:G1ConcRefinementThreads=8 -XX:G1EagerReclaimRemSetThreshold=64 -XX:G1HeapRegionSize=8388608 -XX:G1RemSetArrayOfCardsEntries=64 -XX:G1RemSetHowlMaxNumBuckets=8 -XX:G1RemSetHowlNumBuckets=8 -XX:InitialHeapSize=6442450944 -XX:-IntelJccErratumMitigation -XX:MarkStackSize=4194304 -XX:MarkStackSizeMax=536870912 -XX:MaxHeapSize=12884901888 -XX:MaxNewSize=7725907968 -XX:MinHeapDeltaBytes=8388608 -XX:MinHeapSize=6442450944 -XX:NonNMethodCodeHeapSize=5840896 -XX:NonProfiledCodeHeapSize=122912768 -XX:ProfiledCodeHeapSize=122912768 -XX:ReservedCodeCacheSize=251666432 -XX:+SegmentedCodeCache -XX:SoftMaxHeapSize=12884901888 -XX:-THPStackMitigation -XX:+UseCompactObjectHeaders -XX:+UseCompressedOops -XX:+UseG1GC -XX:X86ICacheSync=3 
+
+
+$ systemctl show minecraft --value -p MainPID
+347099
+
+
+PASS: version 1.1.0 loaded; active service; TCP 25566; one Minecraft JVM; wrapper owns lifecycle; 6G/12G heap unchanged; lifecycle.py/run wrapper/systemd unchanged; server properties values unchanged; production world identity unchanged; marker absent; installed JAR identical to tested build.
+
+{
+  "safety_tests": 13,
+  "process_scenarios": 7,
+  "countdown_timing": "observationSeconds=30.050892946\nflushSeconds=1.048155197\n",
+  "distinct_random_seeds": [
+    "8022979851057578052",
+    "7997388519639114371",
+    "-4467482385392820429",
+    "8810607306031368585"
+  ],
+  "shutdown_requests_normal_countdown": 1,
+  "crash_during_countdown_recovered": true,
+  "normal_stop_preserved_world": true,
+  "jar_sha256": "2fee6470b29e67591393ab42b0037eca49af9e4ca6dd322a1e881562635829fa",
+  "connection_coverage": "Server-side packet capture via simulated connections; no human client"
+}

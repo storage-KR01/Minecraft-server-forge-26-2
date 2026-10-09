@@ -1,0 +1,19 @@
+# Local secrets and runtime state
+/server.properties
+.env
+.env.*
+*.pem
+*.key
+*.lock
+.reset_world
+usercache.json
+usernamecache.json
+# Runtime logs and generated build caches
+logs/
+*.log
+*.log.gz
+__pycache__/
+*.pyc
+.gradle/
+build/
+local-build/

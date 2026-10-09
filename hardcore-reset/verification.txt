@@ -1,0 +1,61 @@
+Verified at 2026-09-29T13:50:27.019263+00:00
+
+$ systemctl is-active minecraft
+active
+
+
+$ systemctl is-enabled minecraft
+enabled
+
+
+$ systemctl show minecraft -p MainPID -p ExecStart -p KillMode -p TimeoutStopUSec -p Restart -p RestartPreventExitStatus
+Restart=on-failure
+TimeoutStopUSec=2min
+RestartPreventExitStatus=78
+MainPID=36002
+ExecStart={ path=/bin/bash ; argv[]=/bin/bash /home/ubuntu/minecraft-26-2/server-wrapper.sh ; ignore_errors=no ; start_time=[Tue 2026-09-29 13:48:47 UTC] ; stop_time=[n/a] ; pid=36002 ; code=(null) ; status=0/0 }
+KillMode=mixed
+
+
+$ ss -ltnp sport = :25566
+State  Recv-Q Send-Q Local Address:Port  Peer Address:PortProcess
+LISTEN 0      4096               *:25566            *:*    users:(("java",pid=36049,fd=222))
+
+
+$ ps -o pid,ppid,args -p 36049
+    PID    PPID COMMAND
+  36049   36026 java @user_jvm_args.txt @libraries/net/minecraftforge/forge/26.2-65.1.3/unix_args.txt nogui
+
+
+$ jcmd 36049 VM.flags
+36049:
+-XX:-AOTInvokeDynamicLinking -XX:-AOTRecordTraining -XX:-AOTReplayTraining -XX:CICompilerCount=4 -XX:ConcGCThreads=2 -XX:G1ConcRefinementThreads=8 -XX:G1EagerReclaimRemSetThreshold=64 -XX:G1HeapRegionSize=8388608 -XX:G1RemSetArrayOfCardsEntries=64 -XX:G1RemSetHowlMaxNumBuckets=8 -XX:G1RemSetHowlNumBuckets=8 -XX:InitialHeapSize=6442450944 -XX:-IntelJccErratumMitigation -XX:MarkStackSize=4194304 -XX:MarkStackSizeMax=536870912 -XX:MaxHeapSize=12884901888 -XX:MaxNewSize=7725907968 -XX:MinHeapDeltaBytes=8388608 -XX:MinHeapSize=6442450944 -XX:NonNMethodCodeHeapSize=5840896 -XX:NonProfiledCodeHeapSize=122912768 -XX:ProfiledCodeHeapSize=122912768 -XX:ReservedCodeCacheSize=251666432 -XX:+SegmentedCodeCache -XX:SoftMaxHeapSize=12884901888 -XX:-THPStackMitigation -XX:+UseCompactObjectHeaders -XX:+UseCompressedOops -XX:+UseG1GC -XX:X86ICacheSync=3 
+
+
+Settings verified:
+server-port=25566
+server-ip=
+difficulty=hard
+gamemode=survival
+hardcore=true
+force-gamemode=true
+level-name=world
+level-seed=
+
+$ sha256sum -c hardcore-reset/original-settings.sha256
+user_jvm_args.txt: OK
+run.sh: OK
+
+
+[29Sep2026 13:48:52.714] [modloading-worker-0/INFO] [local.hardcorereset.HardcoreReset/]: [HARDCORE] hardcorereset 1.0.0 loaded; server-side death monitoring enabled
+
+[29Sep2026 13:48:52.721] [modloading-worker-0/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Forge mod loading, version 65.1.3, for MC 26.2 with MCP 20260616.103818
+
+[29Sep2026 13:48:55.578] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer/]: Starting Minecraft server on *:25566
+
+[29Sep2026 13:48:56.030] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer/]: Done (0.332s)! For help, type "help"
+
+Isolated test seeds: 6325312806404217438, -1510642585694665407, -26336089549618929
+
+PASS: 13 safety tests + 7 lifecycle process scenarios; isolated Forge marker reset and ServerPlayer.die reset; cancelled/mob/synthetic deaths ignored; repeat death guarded; 3 unique seeds; tested and installed bytecode matched.
+Production world directory identity unchanged. No world backup created. No reset marker remains.

@@ -1,0 +1,31 @@
+#!/bin/bash
+
+SERVER_DIR="/home/ubuntu/minecraft-26-2"
+SERVICE="minecraft"
+BACKUP_DIR="/home/ubuntu/minecraft-backups"
+TIMESTAMP=$(date +"%Y%m%d-%H%M%S")
+
+echo "Stopping Minecraft server..."
+sudo systemctl stop "$SERVICE"
+
+mkdir -p "$BACKUP_DIR"
+
+cd "$SERVER_DIR" || exit 1
+
+echo "Backing up old world..."
+if [ -d world ]; then
+    mv world "$BACKUP_DIR/world-$TIMESTAMP"
+fi
+
+if [ -d world_nether ]; then
+    mv world_nether "$BACKUP_DIR/world_nether-$TIMESTAMP"
+fi
+
+if [ -d world_the_end ]; then
+    mv world_the_end "$BACKUP_DIR/world_the_end-$TIMESTAMP"
+fi
+
+echo "Starting new world..."
+sudo systemctl start "$SERVICE"
+
+echo "World reset complete."

@@ -1,0 +1,16 @@
+// Reuse already downloaded, exact-version MDK dependency JARs during this build.
+allprojects {
+    afterEvaluate {
+        def cachesRoot = new File(gradle.gradleUserHomeDir, 'caches/minecraftforge/forgegradle/mavenizer/caches/maven')
+        ['mojang', 'forge'].reverseEach { repoName ->
+            def localRepo = repositories.maven {
+                name = 'existingMdkCache' + repoName
+                url = new File(cachesRoot, repoName).toURI()
+                metadataSources { artifact() }
+                content { excludeModule('net.minecraftforge', 'forge') }
+            }
+            repositories.remove(localRepo)
+            repositories.addFirst(localRepo)
+        }
+    }
+}

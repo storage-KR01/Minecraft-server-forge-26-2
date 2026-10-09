@@ -1,0 +1,18 @@
+[Unit]
+Description=Minecraft Forge Server 26.2
+After=network.target
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/home/ubuntu/minecraft-26-2
+
+ExecStart=/home/ubuntu/minecraft-26-2/run.sh
+
+Restart=on-failure
+RestartSec=10
+
+SuccessExitStatus=0 1
+
+[Install]
+WantedBy=multi-user.target

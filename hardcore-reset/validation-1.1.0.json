@@ -1,0 +1,16 @@
+{
+  "safety_tests": 13,
+  "process_scenarios": 7,
+  "countdown_timing": "observationSeconds=30.050892946\nflushSeconds=1.048155197\n",
+  "distinct_random_seeds": [
+    "8022979851057578052",
+    "7997388519639114371",
+    "-4467482385392820429",
+    "8810607306031368585"
+  ],
+  "shutdown_requests_normal_countdown": 1,
+  "crash_during_countdown_recovered": true,
+  "normal_stop_preserved_world": true,
+  "jar_sha256": "2fee6470b29e67591393ab42b0037eca49af9e4ca6dd322a1e881562635829fa",
+  "connection_coverage": "Server-side packet capture via simulated connections; no human client"
+}
