@@ -1,19 +1,2 @@
-# Local secrets and runtime state
-/server.properties
-.env
-.env.*
-*.pem
-*.key
-*.lock
-.reset_world
-usercache.json
-usernamecache.json
-# Runtime logs and generated build caches
-logs/
-*.log
-*.log.gz
-__pycache__/
-*.pyc
-.gradle/
-build/
-local-build/
+# Full server-directory archival snapshot requested by owner.
+# Git manages its own .git metadata separately.

@@ -8,6 +8,6 @@ The committed `world/` is the currently existing world created after the reset o
 
 Binary server dependencies, mods and world data use Git LFS. Run `git lfs install` and `git lfs pull` after cloning.
 
-The live `server.properties` stays local because it contains a management secret. `server.properties.example` preserves the configuration with secret values removed. Configure secrets locally before use. Runtime logs, lock files and generated build caches are excluded.
+This is a full archival snapshot of the server directory, including the original `server.properties`, runtime logs, caches and lock files, explicitly requested by the owner. The configuration includes its original management secret. Pulling this repository does not rotate secrets; replace them manually before reuse when needed. `server.properties.example` remains available as a sanitized template.
 
 The Hardcore Reset wrapper can permanently delete a world after a player death. Review `HARDCORE-RESET.md` and the wrapper before using it. This snapshot operation does not start the server.

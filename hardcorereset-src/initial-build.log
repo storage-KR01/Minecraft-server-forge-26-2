@@ -1,0 +1,101 @@
+Fetching distribution.
+Downloading https://services.gradle.org/distributions/gradle-9.5.0-bin.zip
+.............10%.............20%..............30%.............40%.............50%..............60%.............70%..............80%.............90%.............100%
+
+Welcome to Gradle 9.5.0!
+
+Here are the highlights of this release:
+ - Task provenance in reports and failure messages
+ - Type-safe accessors for precompiled Kotlin Settings plugins
+
+For more details see https://docs.gradle.org/9.5.0/release-notes.html
+
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/9.5.0/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+Parallel Configuration Cache is an incubating feature.
+Configuration on demand is an incubating feature.
+Calculating task graph as no cached configuration is available for tasks: compileJava
+
+> Configure project :
+Minecraft Mavenizer 0.5.21 by Forge Development LLC
+  Output:             /home/ubuntu/minecraft-26-2/hardcorereset-src/.gradle/mavenizer/repo
+  Output JSON:        /home/ubuntu/minecraft-26-2/hardcorereset-src/.gradle/mavenizer/dependencies/default.json
+  Dependencies Only:  false
+  Cache:              /home/ubuntu/.gradle/caches/minecraftforge/forgegradle/mavenizer/caches
+  JDK Cache:          /home/ubuntu/.gradle/caches/minecraftforge/forgegradle/mavenizer/caches
+  Offline:            false
+  Cache Only:         false
+  Ignore Cache:       false
+  Mappings:           auto
+  Foreign Repos:      [https://repo.maven.apache.org/maven2/, https://maven.minecraftforge.net/, https://libraries.minecraft.net/]
+  GradleVariantHack:  true
+  Disable Gradle:     false
+  Stub Jars:          false
+
+Processing Minecraft dependency: net.minecraftforge:forge:26.2-65.1.3
+Using Mappings: official-26.2
+Processing Minecraft Forge (userdev): 26.2-65.1.3
+  Cache miss!
+  java.lang.Exception: Cache miss! Stacktrace for Information Only
+  	at net.minecraftforge.mcmaven.impl.Mavenizer.assertNotCacheOnly(Mavenizer.java:60)
+  	at net.minecraftforge.mcmaven.impl.cache.MavenCache.download(MavenCache.java:271)
+  	at net.minecraftforge.mcmaven.impl.cache.MavenCache.download(MavenCache.java:101)
+  	at net.minecraftforge.mcmaven.impl.repo.forge.Patcher.<init>(Patcher.java:94)
+  	at net.minecraftforge.mcmaven.impl.repo.forge.ForgeRepo.processV3(ForgeRepo.java:257)
+  	at net.minecraftforge.mcmaven.impl.repo.forge.ForgeRepo.process(ForgeRepo.java:144)
+  	at net.minecraftforge.mcmaven.impl.MinecraftMaven.createForge(MinecraftMaven.java:240)
+  	at net.minecraftforge.mcmaven.impl.MinecraftMaven.run(MinecraftMaven.java:119)
+  	at net.minecraftforge.mcmaven.cli.MavenTask.run(MavenTask.java:218)
+  	at net.minecraftforge.mcmaven.cli.Main.run(Main.java:70)
+  	at net.minecraftforge.mcmaven.cli.Main.main(Main.java:23)
+Mappings Zip
+  srg2names[official-26.2][Empty]
+Mappings POM
+  pom[mappings_official]
+Client Extra
+  downloadLauncherManifest
+  downloadVersionJson[26.2]
+  download[26.2][client]
+  extra[client]
+Client Maven POM
+  pom[client-extra]
+Sources
+  listLibraries
+  stripClient
+  download[26.2][server]
+  extractServer
+  stripServer
+  merge
+  modifyAccess
+  stripSides
+  decompile
+  patch
+  patch[forge]
+  downloadSources
+  injectSources[forge]
+  remap[forge][official-26.2][javadoc]
+  remap[forge][official-26.2][javadoc][variants]
+Classes
+  recompile[forge][official-26.2]
+
+1 problem was found storing the configuration cache.
+- Plugin class 'net.minecraftforge.gradle.internal.ForgeGradlePlugin': failed to compute value with custom source 'net.minecraftforge.gradle.internal.MavenizerValueSource' with org.gradle.process.ProcessExecutionException: Process 'command '/usr/lib/jvm/java-25-openjdk-amd64/bin/java'' finished with non-zero exit value 143 (this value may indicate that the process was terminated with the SIGTERM signal)
+
+See the complete report at file:///home/ubuntu/minecraft-26-2/hardcorereset-src/build/reports/configuration-cache/63w3iafghqc6p77gsft8qjfio/abfs8g0dqb8wrkscb2glic6y8/configuration-cache-report.html
+
+[Incubating] Problems report is available at: file:///home/ubuntu/minecraft-26-2/hardcorereset-src/build/reports/problems/problems-report.html
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem occurred configuring root project 'examplemod'.
+> Process 'command '/usr/lib/jvm/java-25-openjdk-amd64/bin/java'' finished with non-zero exit value 143 (this value may indicate that the process was terminated with the SIGTERM signal)
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights from a Build Scan (powered by Develocity).
+> Get more help at https://help.gradle.org.
+
+BUILD FAILED in 9m 10s
+Configuration cache entry stored with 1 problem.

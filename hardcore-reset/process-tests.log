@@ -1,0 +1,21 @@
+[HARDCORE wrapper] Starting existing run.sh; world=/home/ubuntu/minecraft-26-2/world
+[HARDCORE wrapper] Forge exited (7); no death marker, world preserved
+[PROCESS TEST] PASS crash preserves world and exits nonzero for systemd
+[HARDCORE wrapper] Starting existing run.sh; world=/home/ubuntu/minecraft-26-2/world
+[HARDCORE wrapper] Forge wrote a crash report despite exit code 0; reporting failure to systemd
+[HARDCORE wrapper] Forge exited (1); no death marker, world preserved
+[PROCESS TEST] PASS crash report with exit zero is reported as failure
+[HARDCORE wrapper] Starting existing run.sh; world=/home/ubuntu/minecraft-26-2/world
+[HARDCORE wrapper] Forge exited (0); no death marker, world preserved
+[PROCESS TEST] PASS normal exit preserves world
+[HARDCORE wrapper] Administrator stop requested; no world deletion during stop
+[PROCESS TEST] PASS manual stop waits for child and preserves world
+[HARDCORE wrapper] Administrator stop requested; no world deletion during stop
+[PROCESS TEST] PASS manual stop defers pending reset
+[HARDCORE wrapper] Permanently deleting /home/ubuntu/minecraft-26-2/world (no backup)
+[HARDCORE wrapper] Reset complete; marker removed
+[HARDCORE wrapper] Starting existing run.sh; world=/home/ubuntu/minecraft-26-2/world
+[HARDCORE wrapper] Forge exited (0); no death marker, world preserved
+[PROCESS TEST] PASS pending reset completes before next Forge start
+[HARDCORE wrapper] REFUSING to continue: Unsafe or reserved level-name: '../world'; pending marker retained for inspection
+[PROCESS TEST] PASS unsafe config exits 78, preventing restart loop

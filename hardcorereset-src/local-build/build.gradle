@@ -1,0 +1,18 @@
+plugins { id 'java' }
+version = '1.1.0'
+group = 'local.hardcorereset'
+java.toolchain.languageVersion = JavaLanguageVersion.of(25)
+layout.buildDirectory = file('../build')
+sourceSets.main.java.srcDirs = ['../src/main/java']
+sourceSets.main.resources.srcDirs = ['../src/main/resources']
+def serverLibraries = file('../../libraries')
+def installedForge = new File(serverLibraries, 'net/minecraftforge/forge/26.2-65.1.3/forge-26.2-65.1.3-server.jar')
+if (!installedForge.isFile()) throw new GradleException('Requires the installed Minecraft 26.2 / Forge 65.1.3 server')
+dependencies {
+    compileOnly files(installedForge)
+    compileOnly fileTree(serverLibraries) { include '**/*.jar' }
+}
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+    options.compilerArgs += ['-proc:none']
+}

@@ -1,0 +1,113 @@
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/9.5.0/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+Parallel Configuration Cache is an incubating feature.
+Configuration on demand is an incubating feature.
+Calculating task graph as no cached configuration is available for tasks: build
+
+> Configure project :
+Minecraft Mavenizer 0.5.21 by Forge Development LLC
+  Output:             /home/ubuntu/minecraft-26-2/hardcorereset-src/.gradle/mavenizer/repo
+  Output JSON:        /home/ubuntu/minecraft-26-2/hardcorereset-src/.gradle/mavenizer/dependencies/default.json
+  Dependencies Only:  false
+  Cache:              /home/ubuntu/.gradle/caches/minecraftforge/forgegradle/mavenizer/caches
+  JDK Cache:          /home/ubuntu/.gradle/caches/minecraftforge/forgegradle/mavenizer/caches
+  Offline:            false
+  Cache Only:         false
+  Ignore Cache:       false
+  Mappings:           auto
+  Foreign Repos:      [file:/home/ubuntu/.gradle/caches/minecraftforge/forgegradle/mavenizer/caches/maven/mojang/, https://repo.maven.apache.org/maven2/, https://maven.minecraftforge.net/, file:/home/ubuntu/.gradle/caches/minecraftforge/forgegradle/mavenizer/caches/maven/forge/, https://libraries.minecraft.net/]
+  GradleVariantHack:  true
+  Disable Gradle:     false
+  Stub Jars:          false
+
+Processing Minecraft dependency: net.minecraftforge:forge:26.2-65.1.3
+Using Mappings: official-26.2
+Processing Minecraft Forge (userdev): 26.2-65.1.3
+Mappings Zip
+  srg2names[official-26.2][Empty]
+Mappings POM
+  pom[mappings_official]
+Client Extra
+  downloadLauncherManifest
+  downloadVersionJson[26.2]
+  download[26.2][client]
+  extra[client]
+Client Maven POM
+  pom[client-extra]
+Sources
+  listLibraries
+  download[26.2][server]
+  extractServer
+  stripServer
+  stripClient
+  merge
+  modifyAccess
+  stripSides
+  decompile
+  patch
+  patch[forge]
+  downloadSources
+  injectSources[forge]
+  remap[forge][official-26.2][javadoc]
+  remap[forge][official-26.2][javadoc][variants]
+Classes
+  recompile[forge][official-26.2]
+  injectData[forge][official-26.2]
+  injectData[forge][official-26.2][variants]
+Maven POM
+  pom[forge]
+Metadata
+  metadata[forge]
+    Cache miss!
+    java.lang.Exception: Cache miss! Stacktrace for Information Only
+    	at net.minecraftforge.mcmaven.impl.Mavenizer.assertNotCacheOnly(Mavenizer.java:60)
+    	at net.minecraftforge.mcmaven.impl.Mavenizer.checkCache(Mavenizer.java:94)
+    	at net.minecraftforge.mcmaven.impl.repo.forge.ForgeRepo.lambda$metadata$0(ForgeRepo.java:365)
+    	at net.minecraftforge.mcmaven.impl.util.Task$Simple.execute(Task.java:145)
+    	at net.minecraftforge.mcmaven.impl.repo.Repo$PendingArtifact.get(Repo.java:243)
+    	at net.minecraftforge.mcmaven.impl.MinecraftMaven.finalize(MinecraftMaven.java:408)
+    	at net.minecraftforge.mcmaven.impl.MinecraftMaven.createForge(MinecraftMaven.java:241)
+    	at net.minecraftforge.mcmaven.impl.MinecraftMaven.run(MinecraftMaven.java:119)
+    	at net.minecraftforge.mcmaven.cli.MavenTask.run(MavenTask.java:218)
+    	at net.minecraftforge.mcmaven.cli.Main.run(Main.java:70)
+    	at net.minecraftforge.mcmaven.cli.Main.main(Main.java:23)
+  metadata[forge][variants]
+Minecraft Maven has finished, took 0:00.659
+The message received from the daemon indicates that the daemon has disappeared.
+Build request sent: Build{id=9439894c-7b44-44c6-9bf9-49a074382c25, currentDir=/home/ubuntu/minecraft-26-2/hardcorereset-src}
+Attempting to read last messages from the daemon log...
+Daemon pid: 34744
+  log file: /home/ubuntu/.gradle/daemon/9.5.0/daemon-34744.out.log
+----- Last 20 lines from daemon log file - daemon-34744.out.log -----
+Maven POM
+  pom[forge]
+Metadata
+  metadata[forge]
+    Cache miss!
+    java.lang.Exception: Cache miss! Stacktrace for Information Only
+    	at net.minecraftforge.mcmaven.impl.Mavenizer.assertNotCacheOnly(Mavenizer.java:60)
+    	at net.minecraftforge.mcmaven.impl.Mavenizer.checkCache(Mavenizer.java:94)
+    	at net.minecraftforge.mcmaven.impl.repo.forge.ForgeRepo.lambda$metadata$0(ForgeRepo.java:365)
+    	at net.minecraftforge.mcmaven.impl.util.Task$Simple.execute(Task.java:145)
+    	at net.minecraftforge.mcmaven.impl.repo.Repo$PendingArtifact.get(Repo.java:243)
+    	at net.minecraftforge.mcmaven.impl.MinecraftMaven.finalize(MinecraftMaven.java:408)
+    	at net.minecraftforge.mcmaven.impl.MinecraftMaven.createForge(MinecraftMaven.java:241)
+    	at net.minecraftforge.mcmaven.impl.MinecraftMaven.run(MinecraftMaven.java:119)
+    	at net.minecraftforge.mcmaven.cli.MavenTask.run(MavenTask.java:218)
+    	at net.minecraftforge.mcmaven.cli.Main.run(Main.java:70)
+    	at net.minecraftforge.mcmaven.cli.Main.main(Main.java:23)
+  metadata[forge][variants]
+Minecraft Maven has finished, took 0:00.659
+Daemon vm is shutting down... The daemon has exited normally or was terminated in response to a user interrupt.----- End of the daemon log -----
+
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Gradle build daemon disappeared unexpectedly (it may have been killed or may have crashed)
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights from a Build Scan (powered by Develocity).
+> Get more help at https://help.gradle.org.

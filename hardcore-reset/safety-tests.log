@@ -1,0 +1,23 @@
+test_changed_world_refused (__main__.SafetyTests.test_changed_world_refused) ... ok
+test_dangerous_names (__main__.SafetyTests.test_dangerous_names) ... ok
+test_default (__main__.SafetyTests.test_default) ... ok
+test_deletion_failure_keeps_marker (__main__.SafetyTests.test_deletion_failure_keeps_marker) ... [HARDCORE wrapper] Permanently deleting /tmp/hardcore-safety-11f8y124/world (no backup)
+ok
+test_fixed_seed_refused (__main__.SafetyTests.test_fixed_seed_refused) ... ok
+test_java_properties_duplicates_escapes_and_continuation (__main__.SafetyTests.test_java_properties_duplicates_escapes_and_continuation) ... ok
+test_locked_world_refused (__main__.SafetyTests.test_locked_world_refused) ... ok
+test_marker_mismatch_and_empty_refused (__main__.SafetyTests.test_marker_mismatch_and_empty_refused) ... ok
+test_marker_symlink_refused (__main__.SafetyTests.test_marker_symlink_refused) ... ok
+test_missing_world (__main__.SafetyTests.test_missing_world) ... [HARDCORE wrapper] World already absent: /tmp/hardcore-safety-jqlut0lr/world
+[HARDCORE wrapper] Reset complete; marker removed
+ok
+test_nested_symlink_refused (__main__.SafetyTests.test_nested_symlink_refused) ... ok
+test_reset_only_target_and_marker (__main__.SafetyTests.test_reset_only_target_and_marker) ... [HARDCORE wrapper] Permanently deleting /tmp/hardcore-safety-hgherz6t/world (no backup)
+[HARDCORE wrapper] Reset complete; marker removed
+ok
+test_world_symlink_refused (__main__.SafetyTests.test_world_symlink_refused) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.897s
+
+OK
