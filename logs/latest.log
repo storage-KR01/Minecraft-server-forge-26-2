@@ -1,63 +1,50 @@
-[09Oct2026 07:28:45.156] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forge_server, nogui]
-[09Oct2026 07:28:45.158] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: JVM identified as Ubuntu OpenJDK 64-Bit Server VM 25.0.4.1+1-1-24.04.4-Ubuntu
-[09Oct2026 07:28:45.159] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 10.2.6 starting: java version 25.0.4.1 by Ubuntu; OS Linux arch amd64 version 7.0.0-1011-oracle
-[09Oct2026 07:28:45.238] [main/INFO] [net.minecraftforge.fml.loading.ImmediateWindowHandler/]: ImmediateWindowProvider not loading because launch target is forge_server
-[09Oct2026 07:28:45.306] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.7 Source=jar:file:///home/ubuntu/minecraft-26-2/libraries/org/spongepowered/mixin/0.8.7/mixin-0.8.7.jar!/ Service=ModLauncher Env=SERVER
-[09Oct2026 07:28:45.486] [main/INFO] [net.minecraftforge.fml.loading.moddiscovery.JarInJarDependencyLocator/]: No dependencies to load found. Skipping!
-[09Oct2026 07:28:45.778] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forge_server' with arguments [nogui]
-[09Oct2026 07:28:49.260] [modloading-worker-0/INFO] [local.hardcorereset.HardcoreReset/]: [HARDCORE] hardcorereset 1.1.0 loaded; observation countdown 30 seconds
-[09Oct2026 07:28:49.267] [modloading-worker-0/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Forge mod loading, version 65.1.3, for MC 26.2 with MCP 20260616.103818
-[09Oct2026 07:28:49.268] [modloading-worker-0/INFO] [net.minecraftforge.common.MinecraftForge/FORGE]: MinecraftForge v65.1.3 Initialized
-[09Oct2026 07:28:49.278] [modloading-worker-0/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Opening jdk.naming.dns/com.sun.jndi.dns to java.naming
-[09Oct2026 07:28:49.499] [Forge Version Check/INFO] [net.minecraftforge.fml.VersionChecker/]: [forge] Starting version check at https://files.minecraftforge.net/net/minecraftforge/forge/promotions_slim.json
-[09Oct2026 07:28:50.159] [Forge Version Check/INFO] [net.minecraftforge.fml.VersionChecker/]: [forge] Found status: AHEAD Current: 65.1.3 Target: null
-[09Oct2026 07:28:50.181] [main/INFO] [com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService/]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, profilesHost=https://api.mojang.com, name=PROD]
-[09Oct2026 07:28:50.769] [Worker-Main-5/INFO] [net.minecraft.server.Main/]: No existing world data, creating new world
-[09Oct2026 07:28:51.395] [main/INFO] [net.minecraft.world.item.crafting.RecipeManager/]: Loaded 1585 recipes
-[09Oct2026 07:28:51.414] [main/INFO] [net.minecraft.advancements.AdvancementTree/]: Loaded 1688 advancements
-[09Oct2026 07:28:51.544] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer/]: Starting minecraft server version 26.2
-[09Oct2026 07:28:51.544] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer/]: Loading properties
-[09Oct2026 07:28:51.545] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer/]: Default game type: SURVIVAL
-[09Oct2026 07:28:51.545] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Generating keypair
-[09Oct2026 07:28:51.577] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer/]: Starting Minecraft server on *:25566
-[09Oct2026 07:28:51.685] [Server thread/WARN] [net.minecraft.server.dedicated.DedicatedServer/]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!
-[09Oct2026 07:28:51.686] [Server thread/WARN] [net.minecraft.server.dedicated.DedicatedServer/]: The server will make no attempt to authenticate usernames. Beware.
-[09Oct2026 07:28:51.686] [Server thread/WARN] [net.minecraft.server.dedicated.DedicatedServer/]: While this makes the game possible to play without internet access, it also opens up the ability for hackers to connect with any username they choose.
-[09Oct2026 07:28:51.686] [Server thread/WARN] [net.minecraft.server.dedicated.DedicatedServer/]: To change this, set "online-mode" to "true" in the server.properties file.
-[09Oct2026 07:28:51.697] [Server thread/WARN] [net.minecraftforge.common.ForgeConfigSpec/CORE]: Configuration file ./world/serverconfig/forge-server.toml is not correct. Correcting
-[09Oct2026 07:28:51.698] [Server thread/WARN] [net.minecraftforge.common.ForgeConfigSpec/CORE]: Incorrect key server was corrected from null to its default, SynchronizedConfig{DataHolder:{}}. 
-[09Oct2026 07:28:51.698] [Server thread/WARN] [net.minecraftforge.common.ForgeConfigSpec/CORE]: Incorrect key server.removeErroringBlockEntities was corrected from null to its default, false. 
-[09Oct2026 07:28:51.698] [Server thread/WARN] [net.minecraftforge.common.ForgeConfigSpec/CORE]: Incorrect key server.removeErroringEntities was corrected from null to its default, false. 
-[09Oct2026 07:28:51.698] [Server thread/WARN] [net.minecraftforge.common.ForgeConfigSpec/CORE]: Incorrect key server.fullBoundingBoxLadders was corrected from null to its default, false. 
-[09Oct2026 07:28:51.698] [Server thread/WARN] [net.minecraftforge.common.ForgeConfigSpec/CORE]: Incorrect key server.permissionHandler was corrected from null to its default, forge:default_handler. 
-[09Oct2026 07:28:51.699] [Server thread/WARN] [net.minecraftforge.common.ForgeConfigSpec/CORE]: Incorrect key server.advertiseDedicatedServerToLan was corrected from null to its default, true. 
-[09Oct2026 07:28:51.709] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer/]: Preparing level "world"
-[09Oct2026 07:28:51.904] [Server thread/INFO] [net.minecraft.server.level.progress.LoggingLevelLoadListener/]: Selecting global world spawn...
-[09Oct2026 07:28:55.733] [Server thread/INFO] [net.minecraft.server.level.progress.LoggingLevelLoadListener/]: Loading 0 persistent chunks...
-[09Oct2026 07:28:55.734] [Server thread/INFO] [net.minecraft.server.level.progress.LoggingLevelLoadListener/]: Preparing spawn area: 100%
-[09Oct2026 07:28:55.735] [Server thread/INFO] [net.minecraft.server.level.progress.LoggingLevelLoadListener/]: Time elapsed: 3831 ms
-[09Oct2026 07:28:55.736] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer/]: Done (4.040s)! For help, type "help"
-[09Oct2026 07:28:55.738] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
-[09Oct2026 07:28:55.776] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_nether
-[09Oct2026 07:28:55.780] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_end
-[09Oct2026 07:28:55.843] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (world): All chunks are saved
-[09Oct2026 07:28:55.843] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
-[09Oct2026 07:28:55.843] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
-[09Oct2026 07:28:55.843] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage: All dimensions are saved
-[09Oct2026 07:28:55.861] [Server thread/INFO] [net.minecraftforge.server.permission.PermissionAPI/]: Successfully initialized permission handler forge:default_handler
-[09Oct2026 07:29:55.812] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Server empty for 60 seconds, pausing
-[09Oct2026 07:34:45.190] [Server thread/INFO] [net.minecraft.server.players.PlayerList/]: SieuPhanDong[/14.254.201.101:51756] logged in with entity id 34 at (-49.5, 71.0, 74.5)
-[09Oct2026 07:34:45.206] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: SieuPhanDong joined the game
-[09Oct2026 07:34:48.172] [Server thread/INFO] [net.minecraft.server.network.ServerGamePacketListenerImpl/]: SieuPhanDong lost connection: Disconnected
-[09Oct2026 07:34:48.172] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: SieuPhanDong left the game
-[09Oct2026 07:35:48.162] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Server empty for 60 seconds, pausing
-[09Oct2026 07:51:08.516] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Stopping server
-[09Oct2026 07:51:08.521] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving players
-[09Oct2026 07:51:08.521] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving worlds
-[09Oct2026 07:51:08.521] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
-[09Oct2026 07:51:08.529] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_nether
-[09Oct2026 07:51:08.535] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_end
-[09Oct2026 07:51:08.563] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (world): All chunks are saved
-[09Oct2026 07:51:08.563] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
-[09Oct2026 07:51:08.563] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
-[09Oct2026 07:51:08.563] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage: All dimensions are saved
+[09Oct2026 11:51:41.118] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forge_server, nogui]
+[09Oct2026 11:51:41.119] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: JVM identified as Ubuntu OpenJDK 64-Bit Server VM 25.0.4.1+1-1-24.04.4-Ubuntu
+[09Oct2026 11:51:41.120] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 10.2.6 starting: java version 25.0.4.1 by Ubuntu; OS Linux arch amd64 version 7.0.0-1013-oracle
+[09Oct2026 11:51:41.192] [main/INFO] [net.minecraftforge.fml.loading.ImmediateWindowHandler/]: ImmediateWindowProvider not loading because launch target is forge_server
+[09Oct2026 11:51:41.260] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.7 Source=jar:file:///home/ubuntu/minecraft-26-2/libraries/org/spongepowered/mixin/0.8.7/mixin-0.8.7.jar!/ Service=ModLauncher Env=SERVER
+[09Oct2026 11:51:41.439] [main/INFO] [net.minecraftforge.fml.loading.moddiscovery.JarInJarDependencyLocator/]: No dependencies to load found. Skipping!
+[09Oct2026 11:51:41.618] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forge_server' with arguments [nogui]
+[09Oct2026 11:51:45.250] [modloading-worker-0/INFO] [local.hardcorereset.HardcoreReset/]: [HARDCORE] hardcorereset 1.1.0 loaded; observation countdown 30 seconds
+[09Oct2026 11:51:45.257] [modloading-worker-0/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Forge mod loading, version 65.1.3, for MC 26.2 with MCP 20260616.103818
+[09Oct2026 11:51:45.258] [modloading-worker-0/INFO] [net.minecraftforge.common.MinecraftForge/FORGE]: MinecraftForge v65.1.3 Initialized
+[09Oct2026 11:51:45.268] [modloading-worker-0/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Opening jdk.naming.dns/com.sun.jndi.dns to java.naming
+[09Oct2026 11:51:45.509] [Forge Version Check/INFO] [net.minecraftforge.fml.VersionChecker/]: [forge] Starting version check at https://files.minecraftforge.net/net/minecraftforge/forge/promotions_slim.json
+[09Oct2026 11:51:46.137] [Forge Version Check/INFO] [net.minecraftforge.fml.VersionChecker/]: [forge] Found status: AHEAD Current: 65.1.3 Target: null
+[09Oct2026 11:51:46.258] [main/INFO] [com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService/]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, profilesHost=https://api.mojang.com, name=PROD]
+[09Oct2026 11:51:47.984] [main/INFO] [net.minecraft.world.item.crafting.RecipeManager/]: Loaded 1585 recipes
+[09Oct2026 11:51:48.004] [main/INFO] [net.minecraft.advancements.AdvancementTree/]: Loaded 1688 advancements
+[09Oct2026 11:51:48.134] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer/]: Starting minecraft server version 26.2
+[09Oct2026 11:51:48.134] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer/]: Loading properties
+[09Oct2026 11:51:48.134] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer/]: Default game type: SURVIVAL
+[09Oct2026 11:51:48.134] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Generating keypair
+[09Oct2026 11:51:48.193] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer/]: Starting Minecraft server on *:25566
+[09Oct2026 11:51:48.304] [Server thread/WARN] [net.minecraft.server.dedicated.DedicatedServer/]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!
+[09Oct2026 11:51:48.304] [Server thread/WARN] [net.minecraft.server.dedicated.DedicatedServer/]: The server will make no attempt to authenticate usernames. Beware.
+[09Oct2026 11:51:48.304] [Server thread/WARN] [net.minecraft.server.dedicated.DedicatedServer/]: While this makes the game possible to play without internet access, it also opens up the ability for hackers to connect with any username they choose.
+[09Oct2026 11:51:48.304] [Server thread/WARN] [net.minecraft.server.dedicated.DedicatedServer/]: To change this, set "online-mode" to "true" in the server.properties file.
+[09Oct2026 11:51:48.324] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer/]: Preparing level "world"
+[09Oct2026 11:51:48.603] [Server thread/INFO] [net.minecraft.server.level.progress.LoggingLevelLoadListener/]: Loading 0 persistent chunks...
+[09Oct2026 11:51:48.603] [Server thread/INFO] [net.minecraft.server.level.progress.LoggingLevelLoadListener/]: Preparing spawn area: 100%
+[09Oct2026 11:51:48.615] [Server thread/INFO] [net.minecraft.server.level.progress.LoggingLevelLoadListener/]: Time elapsed: 14 ms
+[09Oct2026 11:51:48.616] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer/]: Done (0.303s)! For help, type "help"
+[09Oct2026 11:51:48.623] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
+[09Oct2026 11:51:48.651] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_nether
+[09Oct2026 11:51:48.664] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_end
+[09Oct2026 11:51:48.777] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (world): All chunks are saved
+[09Oct2026 11:51:48.778] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[09Oct2026 11:51:48.778] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[09Oct2026 11:51:48.778] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage: All dimensions are saved
+[09Oct2026 11:51:48.836] [Server thread/INFO] [net.minecraftforge.server.permission.PermissionAPI/]: Successfully initialized permission handler forge:default_handler
+[09Oct2026 11:52:48.790] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Server empty for 60 seconds, pausing
+[09Oct2026 12:05:56.091] [Server thread/INFO] [net.minecraft.server.network.ServerLoginPacketListenerImpl/]: FishNet (/176.65.149.198:61000) lost connection: Disconnected
+[09Oct2026 12:09:10.791] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Stopping server
+[09Oct2026 12:09:10.793] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving players
+[09Oct2026 12:09:10.793] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving worlds
+[09Oct2026 12:09:10.794] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
+[09Oct2026 12:09:10.798] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_nether
+[09Oct2026 12:09:10.801] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_end
+[09Oct2026 12:09:10.825] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (world): All chunks are saved
+[09Oct2026 12:09:10.825] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[09Oct2026 12:09:10.825] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[09Oct2026 12:09:10.825] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage: All dimensions are saved
